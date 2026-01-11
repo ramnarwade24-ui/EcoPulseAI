@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecopulse-backend
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ecopulse}
+    username: ${SPRING_DATASOURCE_USERNAME:ecopulse}
+    password: ${SPRING_DATASOURCE_PASSWORD:ecopulse}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+ecopulse:
+  jwt:
+    secret: ${JWT_SECRET:change-me}
+    issuer: ecopulse-ai
+    access-token-ttl-seconds: 3600
+  aiEngine:
+    baseUrl: ${AI_ENGINE_URL:http://localhost:8000}
+  security:
+    rateLimitPerMinute: ${RATE_LIMIT_PER_MINUTE:120}
+  encryption:
+    fieldKeyB64: ${FIELD_ENCRYPTION_KEY_B64:}

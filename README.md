@@ -1,3 +1,41 @@
+## 🌍 Problem Statement
+
+AI systems consume massive energy and show increasing carbon emissions. Organizations lack visibility and control over the environmental impact of their AI workloads.
+
+EcoPulse AI solves this by providing real-time carbon tracking, energy optimization, and ESG-compliant sustainability reporting for AI systems.
+
+## 🎯 Use Cases
+
+- Enterprises monitoring carbon footprint of AI workloads  
+- ESG compliance and sustainability audits  
+- Green AI optimization for data centers  
+- Energy-efficient ML model selection  
+- Carbon budgeting & emission forecasting  
+
+## 🔁 System Flow
+
+User → React Dashboard → Spring Boot API  
+Spring Boot API → FastAPI AI Engine  
+FastAPI Engine → Carbon Estimation Models  
+Spring Boot API → PostgreSQL + Redis  
+Dashboard → ESG Reports (PDF)
+
+
+## 📡 Core APIs
+
+POST /api/auth/login  
+POST /api/emissions/calculate  
+GET  /api/footprint/summary  
+POST /api/green-ai/optimize  
+GET  /api/reports/esg
+
+## 🚀 Deployment
+
+EcoPulseAI is fully containerized and supports:
+- Local deployment via Docker Compose
+- Cloud deployment on AWS, GCP, or Azure
+- CI/CD ready architecture
+
 # EcoPulse AI – The Green Intelligence Monitor
 
 EcoPulse AI is an ESG sustainability platform that tracks and optimizes the environmental impact of AI model usage.
